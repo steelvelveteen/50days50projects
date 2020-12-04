@@ -1,2 +1,14 @@
 import './style.scss';
-console.log('Hello typescript webpack template');
+
+const panels = document.querySelectorAll('.panel');
+
+panels?.forEach((pan: Element) => pan.addEventListener('click', () => {
+    removeActiveClasses();
+    pan.classList.add('active');
+}));
+
+const removeActiveClasses = () => {
+    panels.forEach((pan: Element) => {
+        pan.classList.remove('active');
+    });
+}
